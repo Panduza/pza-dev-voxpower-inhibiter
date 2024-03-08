@@ -52,7 +52,7 @@ inhibit(output_module)
 that will send a json payload at 115200 baudrate via USB serial port :
 ```json
 {
-    "inhibit pins": <pins_to_inhibit>
+    "inhibit output module": <module_to_inhibit>
 }
 ```
 
