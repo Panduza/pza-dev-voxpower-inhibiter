@@ -23,7 +23,7 @@ The connection between the Arduino and the Vox Power ***must** be via simple cab
 The connectors for the Vox Power **must** be :
 
 |        | Manufacturer | Housing   | Terminal  |
-| :----: | :----------: | :-------: | :-------: |
+| :----- | :----------: | :-------: | :-------: |
 | Input  | Molex        | 510210600 | 500588000 |
 | Output | Molex        | 511101251 | 503948051 |
 
@@ -31,16 +31,16 @@ The connectors for the Vox Power **must** be :
 
 The input pinout **must** be :
 
-| Pin    | 1   | 2   | 3   | 4        | 5        | 6        |
-| :----: | :-: | :-: | :-: | :------: | :------: | :------: |
-| Signal | COM | 5V  | SD  | reserved | reserved | reserved |
+| Pin    | 1        | 2        | 3        | 4        | 5        | 6        |
+| :----- | :------: | :------: | :------: | :------: | :------: | :------: |
+| Signal | COM      | 5V       | SD       | reserved | reserved | reserved |
 
 
 The output pintout **must** be :
 
-| Pin    | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   | 9    | 10   | 11  | 12  |
-| :----: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :--: | :--: | :-: | :-: |
-| Signal | PG  | INH | PG  | INH | PG  | INH | PG  | INH | GINH | ACOK | 5V  | COM |
+| Pin    | 1    | 2    | 3    | 4    | 5    | 6    | 7    | 8    | 9    | 10   | 11   | 12   |
+| :----- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
+| Signal | PG   | INH  |  PG  | INH  | PG   | INH  | PG   | INH  | GINH | ACOK | 5V   | COM  |
 
 ### Software
 
