@@ -1,0 +1,2 @@
+spec pour produit 
+determiner les pins d'inhibiteurs pour piloter l'alim
