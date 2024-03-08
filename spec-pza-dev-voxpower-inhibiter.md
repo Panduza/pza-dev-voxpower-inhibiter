@@ -1,8 +1,3 @@
----
-title: "pza-dev-voxpower-inhibiter"
-wheigth: 
----
-
 # pza-dev-voxpower-inhibiter
 
 Defintion of the middleware to pilot the VoxPower by inhibiting the output modules.
@@ -36,17 +31,24 @@ The input pinout **must** be :
 | Signal | COM      | 5V       | SD       | reserved | reserved | reserved |
 
 
-The output pintout **must** be :
+The output pintout for each of the 2 sections **must** be :
 
 | Pin    | 1    | 2    | 3    | 4    | 5    | 6    | 7    | 8    | 9    | 10   | 11   | 12   |
 | :----- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
 | Signal | PG   | INH  |  PG  | INH  | PG   | INH  | PG   | INH  | GINH | ACOK | 5V   | COM  |
 
+### Arduino pinout 
+
+The pins used to send the commands signals from the Arduino to the Vox output **must** be D0 to D11 GPIO pins.
+To ihibit an output module the signal **must** be 5V.
+
 ### Software
 
-The command sent by the PC to the Arduino to inhibit an output module **must** be a Python function like
+The command sent by the PC to the Arduino to inhibit and stop the inhibition of an output module **must** be Python functions like
 ```bash
 inhibit(output_module)
+
+enable(output_module)
 ```
 
 that will send a json payload at 115200 baudrate via USB serial port :
@@ -54,14 +56,15 @@ that will send a json payload at 115200 baudrate via USB serial port :
 {
     "inhibit output module": <module_to_inhibit>
 }
+
+{
+    "enable output module": <module_to_enable>
+}
 ```
 
 Then the Arduino **must** send for the corresponding pin
 ```bash
 digitalWrite(pin, HIGH)
+
+digitalWrite(pin, LOW)
 ```
-
-### Arduino pins 
-
-The pins used to send the commands signals from the Arduino to the Vox output **must** be D0 to D11 GPIO pins.
-To ihibit an output module the signal **must** be 5V.
