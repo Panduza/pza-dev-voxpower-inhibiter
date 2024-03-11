@@ -1,6 +1,6 @@
 # pza-dev-voxpower-inhibiter
 
-![global representation of the product](C:/Users/UF073LGI/Pictures/shema-global.png)
+![global representation of the product](C/Users/UF073LGI/Pictures/shema-global.png)
 
 ### `[VOX_INHIB_0000_00]` - Board used
 
