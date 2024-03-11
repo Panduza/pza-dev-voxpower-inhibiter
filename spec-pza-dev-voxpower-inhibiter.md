@@ -39,7 +39,7 @@ The output pintout for each of the 2 sections **must** be :
 
 ### Arduino pinout 
 
-The pins used to send the commands signals from the Arduino to the Vox output **must** be D0 to D11 GPIO pins.
+The pins used to send the commands signals from the Arduino to the Vox output **must** be D0 to D9 GPIO pins for the inhibits.
 To ihibit an output module the signal **must** be 5V.
 
 ### Software
