@@ -1,6 +1,6 @@
 # pza-dev-voxpower-inhibiter
 
-![global representation of the product](shema-global.png)
+![global representation of the product](pictures/shema-global.png)
 
 ### `[VOX_INHIB_0000_00]` - Board used
 
@@ -21,7 +21,7 @@ The connectors for the Vox Power **must** be :
 | :----- | :----------: | :-------: | :-------: |
 | Output | Molex        | 511101251 | 503948051 |
 
-![connector](connector.png)
+![connector](pictures/connector.png)
 
 ### `[VOX_INHIB_0030_00]` - Pinout
 
@@ -31,7 +31,7 @@ The inhibiter pinout **must** be :
 | :------ | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
 | Vox     | INH1 | INH2 | INH3 | INH4 | INH5 | INH6 | INH7 | INH8 |
 
-![vox-pinout](vox-pinout.png)
+![vox-pinout](pictures/vox-pinout.png)
 
 ### `[VOX_INHIB_0040_00]` - USB communication
 
