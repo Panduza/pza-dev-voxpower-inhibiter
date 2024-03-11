@@ -1,6 +1,6 @@
 # pza-dev-voxpower-inhibiter
 
-![global representation of the product](C:\Users\UF073LGI\Pictures\shema-global.png)
+![global representation of the product](./Users/UF073LGI/Pictures/shema-global.png)
 
 ### `[VOX_INHIB_0000_00]` - Board used
 
@@ -42,7 +42,7 @@ inhibit(channel)
 enable(channel)
 ```
 
-that will send bytes to specify the action (inhibit or enable) and the chanel :
+that will send bytes to specify the action (inhibit or enable) and the channel :
 ```bash
 "I" N
 
