@@ -1,70 +1,50 @@
 # pza-dev-voxpower-inhibiter
 
-Defintion of the middleware to pilot the VoxPower by inhibiting the output modules.
+![global representation of the product](C:\Users\UF073LGI\Pictures\shema-global.png)
 
-### Board used
+### `[VOX_INHIB_0000_00]` - Board used
 
-The board used for this middleware **must** be an Arduino UNO
+The board used **must** be an Arduino UNO R3
 
 
-### Cables
+### `[VOX_INHIB_0010_00]` - Cables
 
-The connection between the PC and the Arduino **must** be via an USB cable
+The connection between the PC and the Arduino **must** be via an USB 2.0 A to B
 
-The connection between the Arduino and the Vox Power ***must** be via simple cables linked to the connectors
+The connection between the Arduino and the Vox Power **must** be via simple cables linked to the connectors
 
-### Connectors
+### `[VOX_INHIB_0020_00]` - Connectors
 
 The connectors for the Vox Power **must** be :
 
 |        | Manufacturer | Housing   | Terminal  |
 | :----- | :----------: | :-------: | :-------: |
-| Input  | Molex        | 510210600 | 500588000 |
 | Output | Molex        | 511101251 | 503948051 |
 
-### Pinout
+### `[VOX_INHIB_0030_00]` - Pinout
 
-The input pinout **must** be :
+The inhibiter pinout **must** be :
 
-| Pin    | 1        | 2        | 3        | 4        | 5        | 6        |
-| :----- | :------: | :------: | :------: | :------: | :------: | :------: |
-| Signal | COM      | 5V       | SD       | reserved | reserved | reserved |
+| Arduino | D0   | D1   | D2   | D3   | D4   | D5   | D6   | D7   |
+| :------ | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
+| Vox     | INH1 | INH2 | INH3 | INH4 | INH5 | INH6 | INH7 | INH8 |
 
+### `[VOX_INHIB_0040_00]` - USB communication
 
-The output pintout for each of the 2 sections **must** be :
+The communication **must** be done with a serial link and a baud rate of 115200
 
-| Pin    | 1    | 2    | 3    | 4    | 5    | 6    | 7    | 8    | 9    | 10   | 11   | 12   |
-| :----- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
-| Signal | PG   | INH  |  PG  | INH  | PG   | INH  | PG   | INH  | GINH | ACOK | 5V   | COM  |
+### `[VOX_INHIB_0050_00]` - Software
 
-### Arduino pinout 
-
-The pins used to send the commands signals from the Arduino to the Vox output **must** be D0 to D9 GPIO pins for the inhibits.
-To ihibit an output module the signal **must** be 5V.
-
-### Software
-
-The command sent by the PC to the Arduino to inhibit and stop the inhibition of an output module **must** be Python functions like
+The command sent by the PC to the Arduino to inhibit and enable a channel **must** be Python functions like :
 ```bash
-inhibit(output_module)
+inhibit(channel)
 
-enable(output_module)
+enable(channel)
 ```
 
-that will send a json payload at 115200 baudrate via USB serial port :
-```json
-{
-    "inhibit output module": <module_to_inhibit>
-}
-
-{
-    "enable output module": <module_to_enable>
-}
-```
-
-Then the Arduino **must** send for the corresponding pin
+that will send bytes to specify the action (inhibit or enable) and the chanel :
 ```bash
-digitalWrite(pin, HIGH)
+"I" N
 
-digitalWrite(pin, LOW)
+"E" N
 ```
