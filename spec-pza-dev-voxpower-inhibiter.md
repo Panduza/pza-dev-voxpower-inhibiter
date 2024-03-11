@@ -21,6 +21,8 @@ The connectors for the Vox Power **must** be :
 | :----- | :----------: | :-------: | :-------: |
 | Output | Molex        | 511101251 | 503948051 |
 
+![connector](connector.png)
+
 ### `[VOX_INHIB_0030_00]` - Pinout
 
 The inhibiter pinout **must** be :
@@ -28,6 +30,8 @@ The inhibiter pinout **must** be :
 | Arduino | D0   | D1   | D2   | D3   | D4   | D5   | D6   | D7   |
 | :------ | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
 | Vox     | INH1 | INH2 | INH3 | INH4 | INH5 | INH6 | INH7 | INH8 |
+
+![vox-pinout](vox-pinout.png)
 
 ### `[VOX_INHIB_0040_00]` - USB communication
 
