@@ -17,9 +17,9 @@ The connection between the Arduino and the Vox Power **must** be via simple cabl
 
 The connectors for the Vox Power **must** be :
 
-|        | Manufacturer | Housing   | Terminal  |
-| :----- | :----------: | :-------: | :-------: |
-| Output | Molex        | 511101251 | 503948051 |
+| Manufacturer | Housing   | Terminal  |
+| :----------: | :-------: | :-------: |
+| Molex        | 511101251 | 503948051 |
 
 ![connector](pictures/connector.png)
 
@@ -31,22 +31,16 @@ The inhibiter pinout **must** be :
 | :------ | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
 | Vox     | INH1 | INH2 | INH3 | INH4 | INH5 | INH6 | INH7 | INH8 |
 
+![arduino-pinout](pictures/arduino-pinout.png)
 ![vox-pinout](pictures/vox-pinout.png)
 
-### `[VOX_INHIB_0040_00]` - USB communication
+### `[VOX_INHIB_0040_00]` - USB configuration
 
-The communication **must** be done with a serial link and a baud rate of 115200
+The USB configuration **must** be done with a serial link and a baud rate of 115200
 
-### `[VOX_INHIB_0050_00]` - Software
+### `[VOX_INHIB_0050_00]` - Communication protocol
 
-The command sent by the PC to the Arduino to inhibit and enable a channel **must** be Python functions like :
-```bash
-inhibit(channel)
-
-enable(channel)
-```
-
-that will send bytes to specify the action (inhibit or enable) and the channel :
+The protocol to specify the action (inhibit or enable) and the channel N **must** be :
 ```bash
 "I" N
 
