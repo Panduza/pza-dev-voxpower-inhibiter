@@ -40,9 +40,13 @@ The USB configuration **must** be done with a serial link and a baud rate of 115
 
 ### `[VOX_INHIB_0050_00]` - Communication protocol
 
-The protocol to specify the action (inhibit or enable) and the channel N **must** be :
+The protocol to specify the action (inhibit or enable or state) and the channel N **must** be :
 ```bash
 "I" N
 
 "E" N
+
+"S" N
 ```
+
+When receiving a "S" the Arduino **must** return the state "HIGH" or "LOW" of the specified pin
