@@ -38,7 +38,7 @@ The inhibiter pinout **must** be :
 
 The USB configuration **must** be done with a serial link and a baud rate of 115200
 
-### `[VOX_INHIB_0050_00]` - Communication protocol
+### `[VOX_INHIB_0050_10]` - Communication protocol
 
 The protocol to specify the action (inhibit or enable or state) and the channel N **must** be :
 ```bash

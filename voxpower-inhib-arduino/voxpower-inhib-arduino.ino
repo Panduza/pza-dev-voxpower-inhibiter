@@ -21,6 +21,11 @@ void loop() {
     } else if (command == 'E') {
       // Enable channel
       digitalWrite(channel, LOW);
-    }
+    } else if (command == 'S') {
+      // Get channel state
+      if (digitalRead(channel) == HIGH) {
+        Serial.write('H');
+      } else {
+        Serial.write('L');
   }
 }
