@@ -27,5 +27,7 @@ void loop() {
         Serial.write('H');
       } else {
         Serial.write('L');
+      }
+    }
   }
 }
