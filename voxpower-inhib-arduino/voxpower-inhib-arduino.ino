@@ -12,15 +12,20 @@ void setup() {
 
 void loop() {
   if (Serial.available()) {
+    int t = millis();
     char command = Serial.read();
     int channel = Serial.readString().toInt(); // Convert ASCII digit to integer
 
     if (command == 'I') {
       // Inhibit channel
       digitalWrite(channel, HIGH);
+      int d = millis() - t;
+      Serial.print(d);
     } else if (command == 'E') {
       // Enable channel
       digitalWrite(channel, LOW);
+      int d = millis() - t;
+      Serial.print(d);
     } else if (command == 'S') {
       // Get channel state
       if (digitalRead(channel) == HIGH) {
