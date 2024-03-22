@@ -19,10 +19,12 @@ void loop() {
     if (command == 'I') {
       // Inhibit channel
       digitalWrite(channel, HIGH);
+      Serial.write('H');
 
     } else if (command == 'E') {
       // Enable channel
       digitalWrite(channel, LOW);
+      Serial.write('L');
 
     } else if (command == 'S') {
       // Get channel state
