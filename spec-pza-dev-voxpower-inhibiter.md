@@ -27,9 +27,9 @@ The connectors for the Vox Power **must** be :
 
 The inhibiter pinout **must** be :
 
-| Arduino | D2   | D3   | D4   | D5   | D6   | D7   | D8   | D9   |
-| :------ | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
-| Vox     | INH1 | INH2 | INH3 | INH4 | INH5 | INH6 | INH7 | INH8 |
+| Arduino | D2   | D3   | D4   | D5   | D6   | D7   | D8   | D9   | GND  |
+| :------ | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
+| Vox     | INH1 | INH2 | INH3 | INH4 | INH5 | INH6 | INH7 | INH8 | COM  |
 
 ![arduino-pinout](pictures/arduino-pinout.png)
 ![vox-pinout](pictures/vox-pinout.png)
