@@ -1,6 +1,6 @@
 # pza-dev-voxpower-inhibiter
 
-The device will serve as the link between the Panduza platdorm and the Voxpower to command the inhibiters. The platform will use a serial communication with the board and the board will deliver 5V to the desired channel. 
+The device will serve as the link between the Panduza platform and the Voxpower to command the inhibiters. The platform will use a serial communication with the board and the board will deliver 5V to the desired channel. 
 
 ![global representation of the product](pictures/shema-global.png)
 
