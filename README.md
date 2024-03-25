@@ -1,5 +1,7 @@
 # pza-dev-voxpower-inhibiter
 
+The device will serve as the link between the Panduza platdorm and the Voxpower to command the inhibiters. The platform will use a serial communication with the board and the board will deliver 5V to the desired channel. 
+
 ![global representation of the product](pictures/shema-global.png)
 
 ### `[VOX_INHIB_0000_00]` - Board used
@@ -9,9 +11,9 @@ The board used **must** be an Arduino UNO R3
 
 ### `[VOX_INHIB_0010_00]` - Cables
 
-The connection between the PC and the Arduino **must** be via an USB 2.0 A to B
+The connection between the PC and the Arduino **must** be via an USB 2.0 A to B.
 
-The connection between the Arduino and the Vox Power **must** be via simple cables linked to the connectors
+The connection between the Arduino and the Vox Power **must** be via simple cables linked to the connectors.
 
 ### `[VOX_INHIB_0020_00]` - Connectors
 
@@ -36,7 +38,7 @@ The inhibiter pinout **must** be :
 
 ### `[VOX_INHIB_0040_00]` - USB configuration
 
-The USB configuration **must** be done with a serial link and a baud rate of 115200
+The USB configuration **must** be done with a serial link and a baud rate of 115200.
 
 ### `[VOX_INHIB_0050_10]` - Communication protocol
 
@@ -49,4 +51,5 @@ The protocol to specify the action (inhibit or enable or state) and the channel 
 "S" N
 ```
 
-When receiving a "S" the Arduino **must** return the state "HIGH" or "LOW" of the specified pin
+When receiving a "S" the Arduino **must** return the state "H" or "L" of the specified pin.
+When changing the state, the Arduino **must** return the state "H" or "L" of the specified pin.
