@@ -15,8 +15,6 @@ void setup() {
 }
 
 void loop() {
-  
-  //digitalWrite(14, HIGH);
   if (Serial.available()) {
     
     char command = Serial.read();
