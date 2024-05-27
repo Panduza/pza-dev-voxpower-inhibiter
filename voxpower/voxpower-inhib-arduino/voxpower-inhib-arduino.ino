@@ -1,6 +1,8 @@
 #include <Arduino.h>
 
 void setup() {
+  // Serial.setTimeout(1000);
+
   // Set pin modes for channels (adjust based on your needs)
   for (int i = 2; i < 6; i++) {
     pinMode(i, OUTPUT);
@@ -11,12 +13,11 @@ void setup() {
 
 
   // Start serial communication (default baud rate is 9600)
-  Serial.begin(115200);
+  Serial.begin(9600);
 }
 
 void loop() {
   if (Serial.available()) {
-    
     char command = Serial.read();
     int channel = Serial.readStringUntil('\n').toInt(); // Convert ASCII digit to integer
     if (channel > 5) {
@@ -26,22 +27,23 @@ void loop() {
     if (command == 'I') {
       // Inhibit channel
       digitalWrite(channel, HIGH);
-      Serial.write('H');
 
     } else if (command == 'E') {
       // Enable channel
       digitalWrite(channel, LOW);
-      Serial.write('L');
 
     } else if (command == 'S') {
       // Get channel state
 
       if (digitalRead(channel) == HIGH) {
-        Serial.write('H');
+        const char message[] = "H\n";
+        Serial.write(message, sizeof(message) - 1);
         
       } else {
-        Serial.write('L');
+        const char message[] = "L\n";
+        Serial.write(message, sizeof(message) - 1);
       }
     }
+    Serial.flush();
   }
 }
