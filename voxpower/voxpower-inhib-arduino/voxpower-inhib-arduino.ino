@@ -20,6 +20,8 @@ void loop() {
   if (Serial.available()) {
     char command = Serial.read();
     int channel = Serial.readStringUntil('\n').toInt(); // Convert ASCII digit to integer
+    // const char response[] = ;
+    // Serial.write(command);
     if (channel > 5) {
       channel = channel + 8;
     }
@@ -36,12 +38,14 @@ void loop() {
       // Get channel state
 
       if (digitalRead(channel) == HIGH) {
-        const char message[] = "H\n";
+        const char message[] = "H";
         Serial.write(message, sizeof(message) - 1);
+        Serial.flush();
         
       } else {
-        const char message[] = "L\n";
+        const char message[] = "L";
         Serial.write(message, sizeof(message) - 1);
+        Serial.flush();
       }
     }
     Serial.flush();
