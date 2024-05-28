@@ -35,16 +35,12 @@ void loop() {
       // Get channel state
 
       if (digitalRead(channel) == HIGH) {
-        const char message[] = "H";
-        Serial.write(message, sizeof(message) - 1);
-        Serial.flush();
+        Serial.write("H");
         
       } else {
-        const char message[] = "L";
-        Serial.write(message, sizeof(message) - 1);
-        Serial.flush();
+        Serial.write("L");
       }
+      Serial.flush();
     }
-    Serial.flush();
   }
 }
