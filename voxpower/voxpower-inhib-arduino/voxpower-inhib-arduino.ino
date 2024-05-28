@@ -1,7 +1,6 @@
 #include <Arduino.h>
 
 void setup() {
-  // Serial.setTimeout(1000);
 
   // Set pin modes for channels (adjust based on your needs)
   for (int i = 2; i < 6; i++) {
@@ -20,8 +19,6 @@ void loop() {
   if (Serial.available()) {
     char command = Serial.read();
     int channel = Serial.readStringUntil('\n').toInt(); // Convert ASCII digit to integer
-    // const char response[] = ;
-    // Serial.write(command);
     if (channel > 5) {
       channel = channel + 8;
     }
