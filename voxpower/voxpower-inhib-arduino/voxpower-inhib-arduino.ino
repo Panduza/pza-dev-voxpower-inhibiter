@@ -1,7 +1,6 @@
 #include <Arduino.h>
 
 void setup() {
-  // Serial.setTimeout(1000);
 
   // Set pin modes for channels (adjust based on your needs)
   for (int i = 2; i < 6; i++) {
@@ -36,14 +35,12 @@ void loop() {
       // Get channel state
 
       if (digitalRead(channel) == HIGH) {
-        const char message[] = "H\n";
-        Serial.write(message, sizeof(message) - 1);
+        Serial.write("H");
         
       } else {
-        const char message[] = "L\n";
-        Serial.write(message, sizeof(message) - 1);
+        Serial.write("L");
       }
+      Serial.flush();
     }
-    Serial.flush();
   }
 }
