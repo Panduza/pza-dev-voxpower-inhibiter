@@ -2,7 +2,7 @@
 
 void setup() {
 
-  // Set pin modes for channels (adjust based on your needs)
+  // Set pin modes for channels
   for (int i = 2; i < 6; i++) {
     pinMode(i, OUTPUT);
   }
@@ -17,10 +17,12 @@ void setup() {
 
 void loop() {
   if (Serial.available()) {
+    // Receive a message with one character for command to set the pin state and one character for the id of the pin
     char command = Serial.read();
     int channel = Serial.readStringUntil('\n').toInt(); // Convert ASCII digit to integer
+    channel += 1; // Channels 1 to 4 of the Voxpower corresponds to the Pin 2 to 5 of the arduino
     if (channel > 5) {
-      channel = channel + 8;
+      channel += 8; // Cannels 5 to 8 of the Voxpower corresponds to the Pin 14 to 17 of the arduino
     }
 
     if (command == 'I') {
@@ -40,6 +42,7 @@ void loop() {
       } else {
         Serial.write("L");
       }
+      // Flush the buffer to immediately send the response
       Serial.flush();
     }
   }
