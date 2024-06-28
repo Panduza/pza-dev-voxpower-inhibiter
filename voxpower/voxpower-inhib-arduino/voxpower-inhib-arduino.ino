@@ -19,8 +19,9 @@ void loop() {
   if (Serial.available()) {
     char command = Serial.read();
     int channel = Serial.readStringUntil('\n').toInt(); // Convert ASCII digit to integer
+    channel += 1; // Channels 1 to 4 of the Voxpower corresponds to the Pin 2 to 5 of the arduino
     if (channel > 5) {
-      channel = channel + 8;
+      channel += 8; // Cannels 5 to 8 of the Voxpower corresponds to the Pin 14 to 17 of the arduino
     }
 
     if (command == 'I') {
