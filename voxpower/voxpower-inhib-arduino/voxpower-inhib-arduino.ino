@@ -29,9 +29,17 @@ void loop() {
       // Inhibit channel
       digitalWrite(channel, HIGH);
 
+      Serial.write("OK");
+      // Flush the buffer to immediately send the response
+      Serial.flush();
+
     } else if (command == 'E') {
       // Enable channel
       digitalWrite(channel, LOW);
+      
+      Serial.write("OK");
+      // Flush the buffer to immediately send the response
+      Serial.flush();
 
     } else if (command == 'S') {
       // Get channel state
