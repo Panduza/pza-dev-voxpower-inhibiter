@@ -25,22 +25,35 @@ void loop() {
       channel += 8; // Cannels 5 to 8 of the Voxpower corresponds to the Pin 14 to 17 of the arduino
     }
 
-    if (command == 'I') {
+    if (command == '?' ) {
+      Serial.write("OK\n");
+      // Flush the buffer to immediately send the response
+      Serial.flush();
+
+    } else if (command == 'I') {
       // Inhibit channel
       digitalWrite(channel, HIGH);
+
+      Serial.write("OK\n");
+      // Flush the buffer to immediately send the response
+      Serial.flush();
 
     } else if (command == 'E') {
       // Enable channel
       digitalWrite(channel, LOW);
+      
+      Serial.write("OK\n");
+      // Flush the buffer to immediately send the response
+      Serial.flush();
 
     } else if (command == 'S') {
       // Get channel state
 
       if (digitalRead(channel) == HIGH) {
-        Serial.write("H");
+        Serial.write("H\n");
         
       } else {
-        Serial.write("L");
+        Serial.write("L\n");
       }
       // Flush the buffer to immediately send the response
       Serial.flush();
