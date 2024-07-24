@@ -27,24 +27,18 @@ void loop() {
 
     if (command == '?' ) {
       Serial.write("OK\n");
-      // Flush the buffer to immediately send the response
-      Serial.flush();
 
     } else if (command == 'I') {
       // Inhibit channel
       digitalWrite(channel, HIGH);
 
       Serial.write("OK\n");
-      // Flush the buffer to immediately send the response
-      Serial.flush();
 
     } else if (command == 'E') {
       // Enable channel
       digitalWrite(channel, LOW);
       
       Serial.write("OK\n");
-      // Flush the buffer to immediately send the response
-      Serial.flush();
 
     } else if (command == 'S') {
       // Get channel state
@@ -55,8 +49,9 @@ void loop() {
       } else {
         Serial.write("L\n");
       }
-      // Flush the buffer to immediately send the response
-      Serial.flush();
     }
+    // Flush the buffer to immediately send the response
+    Serial.flush();
+    delay(5);
   }
 }
