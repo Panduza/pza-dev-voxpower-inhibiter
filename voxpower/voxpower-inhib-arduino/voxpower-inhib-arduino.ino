@@ -52,6 +52,5 @@ void loop() {
     }
     // Flush the buffer to immediately send the response
     Serial.flush();
-    delay(5);
   }
 }
